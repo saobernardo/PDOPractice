@@ -15,10 +15,15 @@ cartao_credito bigint,
 cartao_debito bigint
 )engine=innodb;
 
-select * from cliente;
+alter table cliente add column senha varchar(25) not null;
+alter table cliente add column lembrete_senha varchar(25) not null;
+alter table cliente modify lembrete_senha varchar(75) not null;
 
-insert into cliente(nome_cliente,idade,rg,cpf,data_nascimento,valor_carteira,celular)
-values ('Lucas São Bernardo Pinheiro',24,414172358,42676128892,'1994/07/14',0.00,5511998965114);
+select * from cliente;
+#delete from cliente where id_cliente=5;
+
+insert into cliente(id_cliente,nome_cliente,idade,rg,cpf,data_nascimento,valor_carteira,celular,senha,lembrete_senha)
+values (1,'Lucas São Bernardo Pinheiro',24,414172358,42676128892,'1994-07-14',0.00,511998965114,'Pyramaze1','Senha para contas de trabalho');
 
 create table endereco(
 id_endereco int not null primary key auto_increment,
