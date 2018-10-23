@@ -21,11 +21,13 @@ alter table cliente add column senha varchar(25) not null;
 alter table cliente add column lembrete_senha varchar(25) not null;
 #Modificando o tipo de valor de uma coluna
 alter table cliente modify lembrete_senha varchar(75) not null;
+#Excluindo uma coluna desnecessária
+alter table cliente drop column rg;
 
 select * from cliente;
 #delete from cliente where id_cliente=5;
 
-#Adicionandoum valor
+#Adicionando um valor
 insert into cliente(id_cliente,nome_cliente,idade,rg,cpf,data_nascimento,valor_carteira,celular,senha,lembrete_senha)
 values (1,'Lucas São Bernardo Pinheiro',24,414162358,42376128892,'1994-07-14',0.00,511998965114,'Pyramaze1','Senha para contas de trabalho');
 
@@ -127,7 +129,7 @@ select * from plataforma;
 insert into plataforma(nome_plataforma,qte_jogos,descricao_plataforma)
 values('Nintendo Switch',999,'Caro... pacas!');
 
-#Criando a tabela de n:m entre plataforma e jogo
+#Criando a tabela de associação, entre plataforma e jogo
 create table plataforma_jogo(
 id_jogo int not null,
 id_plataforma int not null,
@@ -156,3 +158,24 @@ media_nota decimal(3,1) not null
 
 alter table media_nota add column id_jogo int not null;
 alter table media_nota add constraint fk_idjogo_media foreign key (id_jogo) references jogo(id_jogo);
+
+create table categoria(
+id_categoria int not null primary key auto_increment,
+nome_categoria varchar(50) not null
+)engine=innodb;
+
+create table jogo_has_categoria(
+id_jogo int not null,
+id_categoria int not null,
+foreign key (id_jogo) references jogo(id_jogo),
+foreign key (id_categoria) references categoria(id_categoria)
+)engine=innodb;
+
+create table tag_jogo(
+id_tag int not null primary key auto_increment,
+nome_tag varchar(45) not null,
+preco_aluguel decimal(4,2) not null
+)engine=innodb;
+
+alter table tag_jogo add column id_jogo int not null;
+alter table tag_jogo add constraint fk_idjogo_tag foreign key (id_jogo) references jogo(id_jogo);
