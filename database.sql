@@ -72,6 +72,8 @@ alter table aluguel add column id_cliente int not null;
 alter table aluguel add column id_jogo int not null;
 alter table aluguel add constraint fk_idcliente_aluguel foreign key(id_cliente) references cliente(id_cliente);
 alter table aluguel add constraint fk_idjogo_aluguel foreign key(id_jogo) references jogo(id_jogo);
+alter table aluguel add column id_tag int not null;
+alter table aluguel add constraint fk_idtag foreign key(id_tag) references tag_jogo(id_tag);
 
 #Criando a tabela de requisição
 create table requisicao_devolucao(
