@@ -6,35 +6,29 @@ use classyrenting;
 create table cliente(
 id_cliente int not null primary key auto_increment,
 nome_cliente varchar(100) not null,
-idade int(2) not null,
-rg int(9) not null,
 cpf bigint not null,
 data_nascimento date not null,
 valor_carteira decimal (6,2) not null,
+senha varchar(50) not null,
+lembrete_senha varchar (75) not null,
 celular bigint,
 cartao_credito bigint,
 cartao_debito bigint
 )engine=innodb;
-
-#Adicionando colunas esquecidas
-alter table cliente add column senha varchar(25) not null;
-alter table cliente add column lembrete_senha varchar(25) not null;
-#Modificando o tipo de valor de uma coluna
-alter table cliente modify lembrete_senha varchar(75) not null;
-#Excluindo uma coluna desnecessária
-alter table cliente drop column rg;
 
 select * from cliente;
 #delete from cliente where id_cliente=5;
 
 #Adicionando um valor
 insert into cliente(id_cliente,nome_cliente,idade,rg,cpf,data_nascimento,valor_carteira,celular,senha,lembrete_senha)
-values (1,'Lucas São Bernardo Pinheiro',24,414162358,42376128892,'1994-07-14',0.00,511998965114,'Pyramaze1','Senha para contas de trabalho');
+values (1,'Lucas São Bernardo Pinheiro',24,414162358,42376128892,'1994-07-14',0.00,511998965114,'Pyramaze2','Senha para contas de trabalho');
 
 #Criando a tabela endereço
 create table endereco(
 id_endereco int not null primary key auto_increment,
 logradouro varchar(60) not null,
+numero_casa int (5) not null,
+complemento varchar(30) not null,
 cep int(8) not null,
 bairro varchar(45) not null,
 cidade varchar(45) not null,
@@ -42,9 +36,6 @@ estado varchar(45) not null,
 pais varchar(45) not null
 )engine=innodb;
 
-#Adicionando colunas esquecidas
-alter table endereco add column numero_casa int (5) not null;
-alter table endereco add column complemento varchar (25);
 #Adicionando chave estrangeira
 alter table endereco add column id_cliente int not null;
 alter table endereco add constraint fk_idcliente foreign key(id_cliente) references cliente(id_cliente);
