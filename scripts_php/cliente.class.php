@@ -1,5 +1,5 @@
 <?php
-  class pessoa{
+  class cliente{
     private $nome;
     private $idade;
     private $sexo;
@@ -7,6 +7,6 @@
     private $cpf;
     private $dataNascimento;
     private $valorCarteira;
-    
+
   }
  ?>
