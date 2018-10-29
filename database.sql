@@ -135,6 +135,10 @@ nota_jogo int(2) not null,
 comentario varchar(256) not null
 )engine=innodb;
 
+select * from avaliacao_jogo;
+#Corrigindo o nome da chave primária
+alter table avaliacao_jogo change id_avalicacao id_avaliacao int;
+
 #Adicionando chaves estrangeiras a tabela de avaiação do jogo
 alter table avaliacao_jogo add column id_cliente int not null;
 alter table avaliacao_jogo add column id_jogo int not null;
@@ -149,6 +153,8 @@ media_nota decimal(3,1) not null
 
 alter table media_nota add column id_jogo int not null;
 alter table media_nota add constraint fk_idjogo_media foreign key (id_jogo) references jogo(id_jogo);
+alter table media_nota add column id_avaliacao int not null;
+alter table media_nota add constraint fk_idavaliacao foreign key (id_avaliacao) references avaliacao_jogo(id_avaliacao);
 
 create table categoria(
 id_categoria int not null primary key auto_increment,
