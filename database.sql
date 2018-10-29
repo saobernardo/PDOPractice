@@ -17,7 +17,6 @@ cartao_debito bigint
 )engine=innodb;
 
 select * from cliente;
-#delete from cliente where id_cliente=5;
 
 #Adicionando um valor
 insert into cliente(id_cliente,nome_cliente,idade,rg,cpf,data_nascimento,valor_carteira,celular,senha,lembrete_senha)
