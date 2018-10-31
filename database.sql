@@ -68,6 +68,7 @@ faixa_etaria_jogo int(2) not null
 
 #Deletando uma coluna desnecessária
 alter table aluguel drop column faixa_etaria_jogo;
+
 #Crianco chaves estrangeiras da tabela aluguel
 alter table aluguel add column id_cliente int not null;
 alter table aluguel add column id_jogo int not null;
