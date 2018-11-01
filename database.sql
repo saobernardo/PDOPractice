@@ -17,12 +17,33 @@ cartao_debito bigint
 )engine=innodb;
 
 #Modificando o campo CPF para torná-lo valor único
-alter table cliente modify cpf bigint not null unique;
+alter table cliente modify cpf bigint unique;
+#dropando colunas desnecessárias 
+alter table cliente drop column cartao_debito;
+alter table cliente drop column valor_carteira;
 #select * from cliente;
 
-#Adicionando um valor
-insert into cliente(id_cliente,nome_cliente,idade,rg,cpf,data_nascimento,valor_carteira,celular,senha,lembrete_senha)
-values (1,'Lucas São Bernardo Pinheiro',24,414162358,42376128892,'1994-07-14',0.00,511998965114,'Pyramaze2','Senha para contas de trabalho');
+#Criando a tabela carteira
+create table carteira(
+id_carteira int  primary key auto_increment,
+valor_carteira decimal (5,2) not null
+)engine=innodb;
+
+#Criando chaves estrangeiras na tabela carteira
+alter table carteira add column id_cliente int not null;
+alter table carteira add constraint fk_idcliente_carteira foreign key(id_cliente) references cliente(id_cliente);
+
+#Criando a tabela pgto
+create table pgto(
+id_pgto int primary key auto_increment,
+nome_titular varchar(100) not null,
+cpf_titular bigint not null,
+num_cartao bigint not null
+)engine=innodb;
+
+#Criando chaves estrangeiras na tabela pgto
+alter table pgto add column id_cliente int not null;
+alter table pgto add constraint fk_idcliente_pgto foreign key(id_cliente) references cliente(id_cliente);
 
 #Criando a tabela endereço
 create table endereco(
