@@ -128,6 +128,8 @@ preco_aluguel decimal (4,2) not null,
 faixa_etaria int(2) not null
 )engine=innodb;
 
+#Adicionando uma coluna de Imagem do jogo na tbela jogo
+alter table jogo add column imagem_jogo blob not null;
 #adicionando a coluna de média de notas à tabela
 alter table jogo add column media_nota decimal (3,1) not null;
 #Adicionando chave estrangeira à tabela de jogos
