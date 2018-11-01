@@ -5,7 +5,7 @@
     banco de dados
    */
    define('HOST', '127.0.0.1');
-   define('DBNAME', 'cadastroaluno');
+   define('DBNAME', 'classyrenting');
    define('CHARSET', 'utf8');
    define('USER', 'root');
    define('PASSWORD', '');
