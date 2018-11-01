@@ -16,7 +16,9 @@ cartao_credito bigint,
 cartao_debito bigint
 )engine=innodb;
 
-select * from cliente;
+#Modificando o campo CPF para torná-lo valor único
+alter table cliente modify cpf bigint not null unique;
+#select * from cliente;
 
 #Adicionando um valor
 insert into cliente(id_cliente,nome_cliente,idade,rg,cpf,data_nascimento,valor_carteira,celular,senha,lembrete_senha)
