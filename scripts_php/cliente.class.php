@@ -7,6 +7,6 @@
     private $cpf;
     private $dataNascimento;
     private $valorCarteira;
-
+    
   }
  ?>
