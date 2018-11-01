@@ -16,10 +16,13 @@ cartao_credito bigint,
 cartao_debito bigint
 )engine=innodb;
 
+#Adicionando colunas esquecidas
+alter table cliente add column sexo enum('F','M') not null default 'M';
 #Modificando o campo CPF para torná-lo valor único
 alter table cliente modify cpf bigint unique;
 #dropando colunas desnecessárias 
 alter table cliente drop column cartao_debito;
+alter table cliente drop column cartao_credito;
 alter table cliente drop column valor_carteira;
 #select * from cliente;
 
