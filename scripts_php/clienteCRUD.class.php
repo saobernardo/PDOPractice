@@ -1,5 +1,6 @@
 <?php
   class cliente{
+
     private $nome;
     private $dataNascimento;
     private $sexo;
@@ -64,6 +65,18 @@
       return $this->lembreteSenha;
     }
 
+    public function __construct($conexao){
+      $this->pdo = $conexao;
+    }
+
+    public function CriarUsuario($nome,$dataNascimento,$sexo,$email,$celular,$senha,$lembreteSenha){
+      try{
+        $sql = "INSERT into cliente (nome_cliente,data_nascimento,sexo,email,celular,senha,lembrete_senha) values (?,?,?,?,?,?,?)";
+      }
+      catch(PDOException $erro){
+        echo "Erro na linha: " . $erro->getLine();
+      }
+    }
     
   }
  ?>
