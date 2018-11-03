@@ -18,6 +18,10 @@ cartao_debito bigint
 
 #Adicionando colunas esquecidas
 alter table cliente add column sexo enum('F','M') not null default 'M';
+#Mudando a opsição na tabela
+alter table cliente drop column sexo;
+alter table cliente add column sexo enum('F','M') not null default 'M' after data_nascimento;
+select * from cliente;
 #Modificando o campo CPF para torná-lo valor único
 alter table cliente modify cpf bigint unique;
 #dropando colunas desnecessárias 
