@@ -18,12 +18,13 @@ cartao_debito bigint
 
 #Adicionando colunas esquecidas
 alter table cliente add column sexo enum('F','M') not null default 'M';
-#Mudando a opsição na tabela
+alter table cliente add column email varchar(100) not null after sexo;
+#Mudando a posição na tabela
 alter table cliente drop column sexo;
 alter table cliente add column sexo enum('F','M') not null default 'M' after data_nascimento;
-select * from cliente;
-#Modificando o campo CPF para torná-lo valor único
-alter table cliente modify cpf bigint unique;
+alter table cliente modify celular bigint after email;
+#Removendo o campo de cpf
+alter table cliente drop column cpf;
 #dropando colunas desnecessárias 
 alter table cliente drop column cartao_debito;
 alter table cliente drop column cartao_credito;
@@ -48,6 +49,10 @@ cpf_titular bigint not null,
 num_cartao bigint not null
 )engine=innodb;
 
+select* from pgto;
+#Mudando as propriedades de cpf_titular
+alter table pgto drop column cpf_titular;
+alter table pgto add column cpf_titular bigint not null unique after nome_titular;
 #Criando chaves estrangeiras na tabela pgto
 alter table pgto add column id_cliente int not null;
 alter table pgto add constraint fk_idcliente_pgto foreign key(id_cliente) references cliente(id_cliente);
