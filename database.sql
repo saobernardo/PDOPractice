@@ -24,6 +24,8 @@ alter table cliente modify email varchar(100)not null unique;
 alter table cliente drop column sexo;
 alter table cliente add column sexo enum('F','M') not null default 'M' after data_nascimento;
 alter table cliente modify celular bigint after email;
+#Mudando o nome de um campo dda tabela
+alter table cliente change sexo genero enum('F','M') not null default 'M';
 #Removendo o campo de cpf
 alter table cliente drop column cpf;
 #dropando colunas desnecessárias 
