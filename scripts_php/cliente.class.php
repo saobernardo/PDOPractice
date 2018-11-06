@@ -1,20 +1,22 @@
 <?php
-  class cliente{
-
+  class Cliente{
+    
+    #Atributo
     private $nome;
     private $dataNascimento;
-    private $sexo;
+    private $genero;
     private $email;
     private $celular;
     private $senha;
     private $lembreteSenha;
 
+    #Métodos de encapsulamento
     public function setNome($nome){
       $this->nome = $nome;
     }
 
     public function getNome(){
-      return $this->nome;
+      return $nome;
     }
 
     public function setDataNascimento($dataNascimento){
@@ -22,15 +24,15 @@
     }
 
     public function getDataNascimento(){
-      return $this->dataNascimento;
+      return $dataNascimento;
     }
 
-    public function setSexo($sexo){
-      $this->sexo = $sexo;
+    public function setGenero($genero){
+      $this->genero = $genero;
     }
 
-    public function getSexo(){
-      return $this->sexo;
+    public function getGenero(){
+      return $genero;
     }
 
     public function setEmail($email){
@@ -38,7 +40,7 @@
     }
 
     public function getEmail(){
-      return $this->email;
+      return $email;
     }
 
     public function setCelular($celular){
@@ -46,15 +48,15 @@
     }
 
     public function getCelular(){
-      return $this->celular;
+      return $celular;
     }
 
     public function setSenha($senha){
-      $this->senha =$senha;
+      $this->senha = $senha;
     }
 
     public function getSenha(){
-      return $this->senha;
+      return $senha;
     }
 
     public function setLembreteSenha($lembreteSenha){
@@ -62,21 +64,8 @@
     }
 
     public function getLembreteSenha(){
-      return $this->lembreteSenha;
+      return $lembreteSenha;
     }
 
-    public function __construct($conexao){
-      $this->pdo = $conexao;
-    }
-
-    public function CriarUsuario($nome,$dataNascimento,$sexo,$email,$celular,$senha,$lembreteSenha){
-      try{
-        $sql = "INSERT into cliente (nome_cliente,data_nascimento,sexo,email,celular,senha,lembrete_senha) values (?,?,?,?,?,?,?)";
-      }
-      catch(PDOException $erro){
-        echo "Erro na linha: " . $erro->getLine();
-      }
-    }
-    
   }
- ?>
+?>
