@@ -21,6 +21,9 @@
   $novoCliente->setCidade($_POST['']);
 
   #invocando o método de registro no banco de dados
-  $crudCliente->CriarUsuario($novoCliente->getNome(),$novoCliente->getDataNascimento(),$novoCliente->getGenero(),$novoCliente->getEmail(),$novoCliente->getCelular(),$novoCliente->getSenha(),$novoCliente->getLembreteSenha(), $novoCliente->getPais(), $novoCliente->getEstado(), $novoCliente->getCidade());
+  $crudCliente->CriarUsuario($novoCliente->getNome(),$novoCliente->getDataNascimento(),$novoCliente->getGenero(),
+                              $novoCliente->getEmail(),$novoCliente->getCelular(),$novoCliente->getSenha(),
+                              $novoCliente->getLembreteSenha(), $novoCliente->getPais(), $novoCliente->getEstado(),
+                              $novoCliente->getCidade());
 
  ?>
