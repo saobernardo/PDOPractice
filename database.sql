@@ -139,6 +139,8 @@ alter table jogo add column media_nota decimal (3,1) not null;
 #Adicionando chave estrangeira à tabela de jogos
 alter table jogo add column id_media int not null;
 alter table jogo add constraint fk_idmedia_jogo foreign key (id_media) references media_nota(id_media);
+#dropando colunas desnecessárias
+alter table jogo drop column plataforma;
 
 #Criando a tabela plataforma
 create table plataforma(
