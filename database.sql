@@ -16,6 +16,8 @@ cartao_credito bigint,
 cartao_debito bigint
 )engine=innodb;
 
+#Mudando o valor defult na coluna pais
+alter table cliente modify pais varchar(50) not null default 'Brasil';
 #Adicionando colunas esquecidas
 alter table cliente add column sexo enum('F','M') not null default 'M';
 alter table cliente add column email varchar(100) not null after sexo;
