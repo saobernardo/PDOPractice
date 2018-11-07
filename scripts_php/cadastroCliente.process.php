@@ -5,16 +5,17 @@
 
   #Instanciando o objeto dla classe ClienteCrud
   $crudCliente = new ClienteCRUD(Conexao::getInstance());
+  $novoCliente = new Cliente();
 
   #Pegando os nomes colocados nas caixas de texto e coloando-os nos métodos sets
   #Nomes precisam ser inseridos nas caixas de texto
-  $this->setNome($_POST['']);
-  $this->setDataNascimento($_POST['']);
-  $this->setGenero($_POST['']);
-  $this->setEmail($_POST['']);
-  $this->setCelular($_POST['']);
-  $this->setSenha($_POST['']);
-  $this->setLembreteSenha($_POST['']);
+  $novoCliente->setNome($_POST['']);
+  $novoCliente->setDataNascimento($_POST['']);
+  $novoCliente->setGenero($_POST['']);
+  $novoCliente->setEmail($_POST['']);
+  $novoCliente->setCelular($_POST['']);
+  $novoCliente->setSenha($_POST['']);
+  $novoCliente->setLembreteSenha($_POST['']);
 
-  $crudCliente->CriarUsuario(getNome(),getDataNascimento(),getGenero(),getEmail(),getCelular(),getSenha(),getLembreteSenha());
+  $crudCliente->CriarUsuario($novoCliente->getNome(),$novoCliente->getDataNascimento(),$novoCliente->getGenero(),$novoCliente->getEmail(),$novoCliente->getCelular(),$novoCliente->getSenha(),$novoCliente->getLembreteSenha());
  ?>
