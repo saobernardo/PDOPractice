@@ -1,6 +1,6 @@
 <?php
   require_once 'Conexao.php';
-  require_once 'cliente.class.php'
+  require_once 'cliente.class.php';
   require_once 'ClienteCRUD.class.php';
 
   #Instanciando o objeto dla classe ClienteCrud
