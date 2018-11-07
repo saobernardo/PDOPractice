@@ -20,6 +20,9 @@ cartao_debito bigint
 alter table cliente add column sexo enum('F','M') not null default 'M';
 alter table cliente add column email varchar(100) not null after sexo;
 alter table cliente modify email varchar(100)not null unique;
+alter table cliente add column pais varchar(50) not null;
+alter table cliente add column estado varchar(50) not null;
+alter table cliente add column cidade varchar(50) not null;
 #Mudando a posição na tabela
 alter table cliente drop column sexo;
 alter table cliente add column sexo enum('F','M') not null default 'M' after data_nascimento;
@@ -60,30 +63,6 @@ alter table pgto modify cpf_titular bigint not null;
 #Criando chaves estrangeiras na tabela pgto
 alter table pgto add column id_cliente int not null;
 alter table pgto add constraint fk_idcliente_pgto foreign key(id_cliente) references cliente(id_cliente);
-
-#Criando a tabela endereço
-create table endereco(
-id_endereco int not null primary key auto_increment,
-logradouro varchar(60) not null,
-numero_casa int (5) not null,
-complemento varchar(30) not null,
-cep int(8) not null,
-bairro varchar(45) not null,
-cidade varchar(45) not null,
-estado varchar(45) not null,
-pais varchar(45) not null
-)engine=innodb;
-
-select * from endereco;
-#Removendo coluna desnecessária
-alter table endereco drop bairro;
-alter table endereco drop column logradouro;
-alter table endereco drop column numero_casa;
-alter table endereco drop column complemento;
-alter table endereco drop column cep;
-#Adicionando chave estrangeira
-alter table endereco add column id_cliente int not null;
-alter table endereco add constraint fk_idcliente foreign key(id_cliente) references cliente(id_cliente);
 
 #Criando tabela histórico
 create table historico(
