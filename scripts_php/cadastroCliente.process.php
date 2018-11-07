@@ -7,7 +7,7 @@
   $crudCliente = new ClienteCRUD(Conexao::getInstance());
   $novoCliente = new Cliente();
 
-  #Pegando os nomes colocados nas caixas de texto e coloando-os nos métodos sets
+  #Pegando os nomes colocados nas caixas de texto e colocando-os nos métodos sets
   #Nomes precisam ser inseridos nas caixas de texto
   $novoCliente->setNome($_POST['']);
   $novoCliente->setDataNascimento($_POST['']);
@@ -16,6 +16,11 @@
   $novoCliente->setCelular($_POST['']);
   $novoCliente->setSenha($_POST['']);
   $novoCliente->setLembreteSenha($_POST['']);
+  $novoCliente->setPais($_POST['']);
+  $novoCliente->setEstado($_POST['']);
+  $novoCliente->setCidade($_POST['']);
 
-  $crudCliente->CriarUsuario($novoCliente->getNome(),$novoCliente->getDataNascimento(),$novoCliente->getGenero(),$novoCliente->getEmail(),$novoCliente->getCelular(),$novoCliente->getSenha(),$novoCliente->getLembreteSenha());
+  #invocando o método de registro no banco de dados
+  $crudCliente->CriarUsuario($novoCliente->getNome(),$novoCliente->getDataNascimento(),$novoCliente->getGenero(),$novoCliente->getEmail(),$novoCliente->getCelular(),$novoCliente->getSenha(),$novoCliente->getLembreteSenha(), $novoCliente->getPais(), $novoCliente->getEstado(), $novoCliente->getCidade());
+
  ?>

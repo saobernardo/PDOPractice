@@ -1,6 +1,6 @@
 <?php
   class Cliente{
-    
+
     #Atributo
     private $nome;
     private $dataNascimento;
@@ -9,6 +9,9 @@
     private $celular;
     private $senha;
     private $lembreteSenha;
+    private $pais;
+    private $estado;
+    private $cidade;
 
     #Métodos de encapsulamento
     public function setNome($nome){
@@ -65,6 +68,30 @@
 
     public function getLembreteSenha(){
       return $lembreteSenha;
+    }
+
+    function setPais($pais){
+      $this->pais = $pais;
+    }
+
+    function getPais(){
+      return $pais;
+    }
+
+    function setEstado($estado){
+      $this->estado = $estado;
+    }
+
+    function getEstado(){
+      return $estado;
+    }
+
+    function setCidade(){
+      $this->cidade = $cidade;
+    }
+
+    function getCidade(){
+      return $cidade;
     }
 
   }
