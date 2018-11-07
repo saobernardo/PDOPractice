@@ -74,8 +74,13 @@ estado varchar(45) not null,
 pais varchar(45) not null
 )engine=innodb;
 
+select * from endereco;
 #Removendo coluna desnecessária
 alter table endereco drop bairro;
+alter table endereco drop column logradouro;
+alter table endereco drop column numero_casa;
+alter table endereco drop column complemento;
+alter table endereco drop column cep;
 #Adicionando chave estrangeira
 alter table endereco add column id_cliente int not null;
 alter table endereco add constraint fk_idcliente foreign key(id_cliente) references cliente(id_cliente);
