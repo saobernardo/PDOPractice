@@ -136,13 +136,14 @@ faixa_etaria int(2) not null
 alter table jogo add column imagem_jogo blob not null;
 #adicionando a coluna de média de notas à tabela
 alter table jogo add column media_nota decimal (3,1) not null;
-#Adicionando chave estrangeira à tabela de jogos
+#Adicionando chaves estrangeiras à tabela de jogos
 alter table jogo add column id_media int not null;
 alter table jogo add constraint fk_idmedia_jogo foreign key (id_media) references media_nota(id_media);
 alter table jogo add column id_tag int not null;
 alter table jogo add constraint fk_idtag_jogo foreign key (id_tag) references tag_jogo(id_tag);
 #dropando colunas desnecessárias
 alter table jogo drop column plataforma;
+alter table jogo drop column faixa_etaria;
 
 #Criando a tabela plataforma
 create table plataforma(
@@ -210,3 +211,15 @@ id_tag int not null primary key auto_increment,
 nome_tag varchar(45) not null,
 preco_aluguel decimal(4,2) not null
 )engine=innodb;
+
+create table faixa_etaria(
+id_faixaetaria int not null primary key auto_increment,
+faixa_etaria tinyint not null
+)engine = innodb;
+
+create table jogo_has_faixaetaria(
+id_jogo int not null,
+id_faixaetaria int not null,
+foreign key (id_jogo) references jogo(id_jogo),
+foreign key (id_faixaetaria) references faixa_etaria(id_faixaetaria)
+)engine = innodb;
