@@ -139,6 +139,8 @@ alter table jogo add column media_nota decimal (3,1) not null;
 #Adicionando chave estrangeira à tabela de jogos
 alter table jogo add column id_media int not null;
 alter table jogo add constraint fk_idmedia_jogo foreign key (id_media) references media_nota(id_media);
+alter table jogo add column id_tag int not null;
+alter table jogo add constraint fk_idtag_jogo foreign key (id_tag) references tag_jogo(id_tag);
 #dropando colunas desnecessárias
 alter table jogo drop column plataforma;
 
@@ -208,6 +210,3 @@ id_tag int not null primary key auto_increment,
 nome_tag varchar(45) not null,
 preco_aluguel decimal(4,2) not null
 )engine=innodb;
-
-alter table tag_jogo add column id_jogo int not null;
-alter table tag_jogo add constraint fk_idjogo_tag foreign key (id_jogo) references jogo(id_jogo);
