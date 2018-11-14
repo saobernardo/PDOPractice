@@ -145,27 +145,6 @@ alter table jogo add constraint fk_idtag_jogo foreign key (id_tag) references ta
 alter table jogo drop column plataforma;
 alter table jogo drop column faixa_etaria;
 
-#Criando a tabela plataforma
-create table plataforma(
-id_plataforma int not null primary key auto_increment,
-nome_plataforma varchar(25) not null,
-qte_jogos int(5) not null,
-descricao_plataforma varchar(1024) not null
-)engine=innodb;
-
-#Verificando e adicionando informações à tabela plataforma
-select * from plataforma;
-insert into plataforma(nome_plataforma,qte_jogos,descricao_plataforma)
-values('Nintendo Switch',999,'Caro... pacas!');
-
-#Criando a tabela de associação, entre plataforma e jogo
-create table plataforma_jogo(
-id_jogo int not null,
-id_plataforma int not null,
-foreign key (id_jogo) references jogo(id_jogo),
-foreign key (id_plataforma) references plataforma(id_plataforma)
-)engine=innodb;
-
 #Criando a tabela de avaliação do jogo
 create table avaliacao_jogo(
 id_avalicacao int not null primary key auto_increment,
