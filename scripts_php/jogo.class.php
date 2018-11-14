@@ -1,9 +1,11 @@
 <?php
 
+  require_once 'Conexão.php';
+
   class Jogo
   {
     #Conexão de banco de dados
-    require_once 'Conexão.php';
+
      #Método construtor
     function __construct(argument)
     {
@@ -17,7 +19,6 @@
     private $tag #tabela tag_jogo
     private $faixaEtaria; #tabela faixa_etaria
     private $categoria; #tabela categoria
-    private $plataforma; #Requisição do banco de dados. Um jogo seá registrado em uma plataforma e será contatdo no banco de dados
 
     #métodos de encapsulmento
     function setNome($nome){
@@ -74,14 +75,6 @@
 
     function getCategoria(){
       return $categoria;
-    }
-
-    function setPlataforma($plataforma){
-      $this->plataforma = $plataforma;
-    }
-
-    function getPlataforma(){
-      return $plataforma;
     }
 
     #método para fazer a média de notas recebidas pelo jogo e salvá-lo no
