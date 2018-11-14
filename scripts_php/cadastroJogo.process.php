@@ -19,7 +19,7 @@
 
   #Chamando os métodos de CRUD para armazenar no banco de dados
   $crudJogo->AddGame($novoJogo->getNome(),$novoJogo->getDescricao()->,$novoJogo->getDataLancamento());
-  $crudJogo->AddTag($novoJogo->getPrecoAluguel(),$novoJogo->getTag());
+  $crudJogo->AddTag($novoJogo->getTag(),$novoJogo->getPrecoAluguel());
   $crudJogo->AddFE($novoJogo->getFaixaEtaria());
   $crudJogo->addCategoria($novoJogo->getCategoria());
 
