@@ -3,8 +3,9 @@
   require_once 'cliente.class.php';
   require_once 'ClienteCRUD.class.php';
 
-  #Instanciando o objeto dla classe ClienteCrud
+  #Instanciando o objeto da classe ClienteCrud
   $crudCliente = new ClienteCRUD(Conexao::getInstance());
+  #Instanciando a classe cliente para poder usar seus Gets e Sets
   $novoCliente = new Cliente();
 
   #Pegando os nomes colocados nas caixas de texto e colocando-os nos métodos sets
