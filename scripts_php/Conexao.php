@@ -1,43 +1,29 @@
 <?php
 
-   /*
-    Cria as constantes com os dados necessário para configuração da conexão com
-    banco de dados
-   */
    define('HOST', '127.0.0.1');
    define('DBNAME', 'classyrenting');
    define('CHARSET', 'utf8');
    define('USER', 'root');
    define('PASSWORD', '');
 
-   /*Declara a classe de conexão*/
    class Conexao {
 
     /*Declara um atributo estático que vai armazenar o objeto da PDO do PHP.*/
     private static $pdo;
 
-
-    /*private function __construct() {
-
-    }*/
-
-    /*
-      Método estática para criação da instancia de conexão.
-    */
+    #Método estática para criação da instancia de conexão.
     public static function getInstance() {
 
       /*Verifica se já existe uma conexão com a base de dados se não houver cria.*/
      if (!isset(self::$pdo)) {
 
-       /*A estrura try...catch permite tentar (try) uma ação e capturar (catch)
-       um erro lancando tratamentos para o mesmo.  */
-       /*try - Tenta configurar e abrir uma conexão.*/
+      /*try - Tenta configurar e abrir uma conexão.*/
       try {
-        /*Cria um arrya com valores de configuração para a conexão
+        /*Cria um array com valores de configuração para a conexão
           PDO::MYSQL_ATTR_INIT_COMMAND => Essa constante é sempre lida quando uma conexão é aberta
           SET NAMES UTF8 - Configura o PDO para trabalhar com utf8
 
-          ATTR_PERSISTENT - Confgiura o modo de persisitencia de dados como verdadeiro.
+          ATTR_PERSISTENT - Configiura o modo de persisitencia de dados como verdadeiro.
 
         */
        $opcoes = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8', PDO::ATTR_PERSISTENT => TRUE);
@@ -57,15 +43,14 @@
        self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       /*try - Captura e trata um erro.*/
-      } catch (PDOException $e) {
+      }
+      catch (PDOException $e) {
 
        print "Erro: " . $e->getMessage();
 
       }
 
      }
-
-     /*Retorna um objeto de PDO válido com uma conexão aberta.*/
      return self::$pdo;
 
     }
