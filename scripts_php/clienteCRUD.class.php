@@ -30,14 +30,14 @@
       }
     }
 
-    function SaveAddress($cidade,$estado,$pais){
+    /*function SaveAddress($cidade,$estado,$pais){
       try{
         $sql = "INSERT INTO endereco (cidade, estado, pais)"
       }
       catch(PDOException $err){
         echo "Erro na linha: " . $err->getLine();
       }
-    }
+    }*/
 
     public function SelectAll(){
 
