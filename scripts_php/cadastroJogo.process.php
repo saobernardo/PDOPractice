@@ -12,15 +12,11 @@
   $novoJogo->setNome($_POST['']);
   $novoJogo->setDescricao($_POST['']);
   $novoJogo->setDataLancamento($_POST['']);
-  $novoJogo->setPrecoAluguel($_POST['']);
   $novoJogo->setTag($_POST['']);
   $novoJogo->setFaixaEtaria($_POST['']);
   $novoJogo->setCategoria($_POST['']);
 
   #Chamando os métodos de CRUD para armazenar no banco de dados
   $crudJogo->AddGame($novoJogo->getNome(),$novoJogo->getDescricao()->,$novoJogo->getDataLancamento());
-  $crudJogo->AddTag($novoJogo->getTag(),$novoJogo->getPrecoAluguel());
-  $crudJogo->AddFE($novoJogo->getFaixaEtaria());
-  $crudJogo->addCategoria($novoJogo->getCategoria());
 
 ?>
