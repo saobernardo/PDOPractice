@@ -133,7 +133,7 @@ preco_aluguel decimal (4,2) not null,
 faixa_etaria int(2) not null
 )engine=innodb;
 
-#Adicionando uma coluna de Imagem do jogo na tbela jogo
+#Adicionando uma coluna de Imagem do jogo na tabela jogo
 alter table jogo add column imagem_jogo blob not null;
 #adicionando a coluna de média de notas à tabela
 alter table jogo add column media_nota decimal (3,1) not null;
@@ -145,6 +145,7 @@ alter table jogo add constraint fk_idtag_jogo foreign key (id_tag) references ta
 #dropando colunas desnecessárias
 alter table jogo drop column plataforma;
 alter table jogo drop column faixa_etaria;
+alter table jogo drop column preco_aluguel;
 
 #Criando a tabela de avaliação do jogo
 create table avaliacao_jogo(
@@ -176,8 +177,24 @@ alter table media_nota add constraint fk_idavaliacao foreign key (id_avaliacao) 
 
 create table categoria(
 id_categoria int not null primary key auto_increment,
-nome_categoria varchar(50) not null
+nome_categoria varchar(70) not null
 )engine=innodb;
+
+select * from categoria;
+
+insert into categoria (nome_categoria)
+values ('4X'),('First Person Adventure'),('Beat em Up'),('bishōjo'),('Business'),('Construct and Management'),
+('Dungeon Crawler'),('Educational'),('Eroge'),('Escape the Room'),('Sport'),('Strategy'),('Real-time Strategy'),
+('Turn-based Strategy'),('Hack n Slash'),('Card Game'),('Vehicle Combat'),('VR'),('Alternative Reality Game'),
+('Rhythm'),('Survival'),('Tactical Shooting Game'),('Action'),('Action/Adventure'),('Audio'),('Adventure'),('Battle-Royale'),
+('City Construction'), ('Race'),('War'),('Labyrinth'),('Fighting Game'),('Music'),('Platform'),('Group'),
+('Idle Game'),('Stealth'),('Shooting'),('Massively Muliplayer Online First Person-Shooter'),('Metroidvania'),
+('Multi-user Dungeon'), ('Massively Multiplayer Online Real-Time Strategy'),('Massively Multiplayer Online Role-Playing Game'),
+('Massively Multiplayer Online Social Game'),('Multiplyer Online Battle Arena'),('Open-World'),('Pluzzle'),
+('Role-Playing game (RPG)'),('Roguelike'),('Action Role-Playing Game'),('Strategy Role-Playing Game'),
+('Shoot em Up'),('Simulation game'),('Air Combat Simulation'),('Racing Simulation'),('Romance Simulation'),
+('Life Simulation'),('Surival Horror'),('Real-Time Tactics'),('First Person Shooter'),('Third Person Shooter'),
+('Tower Defense'),('Visual Romance');
 
 create table jogo_has_categoria(
 id_jogo int not null,
@@ -192,10 +209,28 @@ nome_tag varchar(45) not null,
 preco_aluguel decimal(4,2) not null
 )engine=innodb;
 
+insert into tag_jogo (nome_tag, preco_aluguel)
+values ('Verde', 15.00),
+('Amarelo', 8.00),
+('Vermelho', 5.00),
+('Preto', 4.00);
+
 create table faixa_etaria(
 id_faixaetaria int not null primary key auto_increment,
 faixa_etaria tinyint not null
 )engine = innodb;
+
+alter table faixa_etaria add column nome_faixaetaria varchar(30) not null;
+
+insert into faixa_etaria(faixa_etaria, nome_faixaetaria)
+values (3, 'Early Childhood (EC)'),
+(6, 'Everyone (E)'),
+(10, 'Everyone 10+ (E10+)'),
+(13, 'Teen (T)'),
+(17, 'Mature (M)'),
+(18, 'Adults Only (AO)');
+
+select * from faixa_etaria;
 
 create table jogo_has_faixaetaria(
 id_jogo int not null,
