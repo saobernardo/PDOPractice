@@ -16,7 +16,6 @@
         $stmt->bindValue(1, $nome);
         $stmt->bindValue(2, $descricao);
         $stmt->bindValue(3, $dataLancamento);
-        $stmt->bindValue(4, $idMedia);
         $stmt->bindValue(5, $idTag)
         $stmt->execute();
         #Salvando o último id inserido e salvando em um atributo global chamando $lastID
@@ -42,9 +41,9 @@
       }
     }*/
 
-    /*function addFE($faixaEtaria){
+    function addFE($faixaEtaria){
       try{
-        $sqlFaixaEtaria = "INSERT INTO faixa_etaria (id_faixaetaria, faixa_etaria) VALUES (?,?)";
+        $sqlFaixaEtaria = "INSERT INTO jogo_has_faixaetaria (id_jogo, id_faixaetaria) VALUES (?,?)";
         $stmt= $this->pdo->prepare($sqlFaixaEtaria);
         $stmt->bindValue(1, $this->lastID);
         $stmt->bindValue(2, $faixaEtaria);
@@ -55,7 +54,7 @@
       }
     }*/
 
-    /*function addCategoria($categoria){
+    function addCategoria($categoria){
       try{
         $sqlCategoria = "INSERT INTO categoria (id_categoria, nome_categoria) VALUES (?,?)";
         $stmt = $this->pdo->prepare($sqlCategoria);

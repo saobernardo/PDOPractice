@@ -45,13 +45,13 @@
       return $dataLancamento;
     }
 
-    /*function setPrecoAluguel($precoAluguel){
+    function setPrecoAluguel($precoAluguel){
       $this->precoAluguel = $precoAluguel;
     }
 
     function getPrecoAluguel(){
       return $precoAluguel;
-    }*/
+    }
 
     function setTag($tag){
       $this->tag = $tag;
