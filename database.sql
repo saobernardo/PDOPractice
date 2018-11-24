@@ -38,6 +38,7 @@ alter table cliente drop column cpf;
 alter table cliente drop column cartao_debito;
 alter table cliente drop column cartao_credito;
 alter table cliente drop column valor_carteira;
+alter table cliente drop column imagem_perfil;
 
 
 #Criando a tabela carteira
