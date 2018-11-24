@@ -38,7 +38,7 @@ alter table cliente drop column cpf;
 alter table cliente drop column cartao_debito;
 alter table cliente drop column cartao_credito;
 alter table cliente drop column valor_carteira;
-#select * from cliente;
+
 
 #Criando a tabela carteira
 create table carteira(
@@ -146,6 +146,9 @@ alter table jogo add constraint fk_idtag_jogo foreign key (id_tag) references ta
 alter table jogo drop column plataforma;
 alter table jogo drop column faixa_etaria;
 alter table jogo drop column preco_aluguel;
+#Removendo uma chave etrangeira
+alter table jogo drop foreign key fk_idmedia_jogo;
+alter table jogo drop column id_media;
 
 #Criando a tabela de avaliação do jogo
 create table avaliacao_jogo(
