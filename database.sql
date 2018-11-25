@@ -16,6 +16,8 @@ cartao_credito bigint,
 cartao_debito bigint
 )engine=innodb;
 
+select * from cliente;
+
 #Mudando o valor defult na coluna pais
 alter table cliente modify pais varchar(50) not null default 'Brasil';
 #Adicionando colunas esquecidas

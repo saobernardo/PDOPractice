@@ -7,9 +7,9 @@
       $this->pdo = $conexao;
     }
 
-    public function CreateUser($nome,$dataNascimento,$genero,$email,$celular,$senha,$lembreteSenha,$pais,$estado,$cidade){
+    public function CreateUser($nome, $dataNascimento, $genero, $email, $celular, $senha, $lembreteSenha, $pais, $estado, $cidade){
       try{
-        $sql = "INSERT INTO cliente (nome_cliente,data_nascimento,sexo,email,celular,senha,lembrete_senha,pais,estado,cidade) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO cliente (nome_cliente, data_nascimento, genero, email, celular, senha, lembrete_senha, pais, estado, cidade) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
         $stm = $this->pdo->prepare($sql);
         $stm->bindValue(1, $nome);
@@ -23,21 +23,13 @@
         $stm->bindValue(9, $estado);
         $stm->bindValue(10, $cidade);
         $stm->execute();
+
       }
 
       catch(PDOException $err){
         echo "Erro na linha: " . $err->getLine();
       }
     }
-
-    /*function SaveAddress($cidade,$estado,$pais){
-      try{
-        $sql = "INSERT INTO endereco (cidade, estado, pais)"
-      }
-      catch(PDOException $err){
-        echo "Erro na linha: " . $err->getLine();
-      }
-    }*/
 
     public function SelectAll(){
 
@@ -75,12 +67,12 @@
 
     }
 
-    public Change($nome,$dataNascimento,$genero,$email,$celular,$senha,$lembreteSenha,$pais,$estado,$cidade,$code){
-      $sql = "UPDATE cliente SET nome_cliente=?,data_nascimento=?,genero=?,email=?,celular=?,senha=?,lembreteSenha=?,pais=?,estado=?,cidade=? WHERE id_aluno=?";
+    public function Change($nome,$dataNascimento,$genero,$email,$celular,$senha,$lembreteSenha,$pais,$estado,$cidade,$code){
+      $sql = "UPDATE cliente SET nome_cliente=?,data_nascimento=?,genero=?,email=?,celular=?,senha=?,lembreteSenha=?,pais=?,estado=?,cidade=? WHERE id_cliente=?";
       try{
         $stmt = $this->pdo->prepare($sql);
 
-        $stmt->bindValue(1, $client->getNome());
+        $stmt->bindValue(1, $nome);
         $stmt->bindValue(2, $dataNascimento);
         $stmt->bindValue(3, $genero);
         $stmt->bindValue(4, $email);
@@ -95,10 +87,11 @@
       }
 
       catch(PDOException $err){
-        echo "Erro na linha ".$err->getLine();
+        echo "Erro na linha " . $err->getLine();
       }
     }
 
+    /*
     #Função de apagar do banco
     public function Delete($code){
 
@@ -114,7 +107,7 @@
         echo "Erro na linha". $err->getLine();
       }
 
-    }
+    }*/
 
   }
  ?>

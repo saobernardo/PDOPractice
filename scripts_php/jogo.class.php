@@ -26,7 +26,7 @@
     }
 
     function getNome(){
-      return $nome;
+      return $this->nome;
     }
 
     function setDescricao($descricao){
@@ -34,7 +34,7 @@
     }
 
     function getDescricao(){
-      return $descricao;
+      return $this->descricao;
     }
 
     function setDataLancamento($dataLancamento){
@@ -42,7 +42,7 @@
     }
 
     function getDataLancamento(){
-      return $dataLancamento;
+      return $this->dataLancamento;
     }
 
     function setPrecoAluguel($precoAluguel){
@@ -50,7 +50,7 @@
     }
 
     function getPrecoAluguel(){
-      return $precoAluguel;
+      return $this->precoAluguel;
     }
 
     function setTag($tag){
@@ -58,7 +58,7 @@
     }
 
     function getTag(){
-      return $tag;
+      return $this->tag;
     }
 
     function setFaixaEtaria($faixaEtaria){
@@ -66,7 +66,7 @@
     }
 
     function getFaixaEtaria(){
-      return $faixaEtaria;
+      return $this->faixaEtaria;
     }
 
     function setCategoria($categoria){
@@ -74,7 +74,7 @@
     }
 
     function getCategoria(){
-      return $categoria;
+      return $this->categoria;
     }
 
     #método para fazer a média de notas recebidas pelo jogo e salvá-lo no

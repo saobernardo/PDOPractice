@@ -19,7 +19,7 @@
     }
 
     public function getNome(){
-      return $nome;
+      return $this->nome;
     }
 
     public function setDataNascimento($dataNascimento){
@@ -27,7 +27,7 @@
     }
 
     public function getDataNascimento(){
-      return $dataNascimento;
+      return $this->dataNascimento;
     }
 
     public function setGenero($genero){
@@ -35,7 +35,7 @@
     }
 
     public function getGenero(){
-      return $genero;
+      return $this->genero;
     }
 
     public function setEmail($email){
@@ -43,7 +43,7 @@
     }
 
     public function getEmail(){
-      return $email;
+      return $this->email;
     }
 
     public function setCelular($celular){
@@ -51,7 +51,7 @@
     }
 
     public function getCelular(){
-      return $celular;
+      return $this->celular;
     }
 
     public function setSenha($senha){
@@ -59,7 +59,7 @@
     }
 
     public function getSenha(){
-      return $senha;
+      return $this->senha;
     }
 
     public function setLembreteSenha($lembreteSenha){
@@ -67,7 +67,7 @@
     }
 
     public function getLembreteSenha(){
-      return $lembreteSenha;
+      return $this->lembreteSenha;
     }
 
     function setPais($pais){
@@ -75,7 +75,7 @@
     }
 
     function getPais(){
-      return $pais;
+      return $this->pais;
     }
 
     function setEstado($estado){
@@ -83,15 +83,15 @@
     }
 
     function getEstado(){
-      return $estado;
+      return $this->estado;
     }
 
-    function setCidade(){
+    function setCidade($cidade){
       $this->cidade = $cidade;
     }
 
     function getCidade(){
-      return $cidade;
+      return $this->cidade;
     }
 
   }
