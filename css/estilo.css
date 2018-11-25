@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: black;
 }
@@ -10,4 +14,61 @@ label{
     color: white;
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
+}
+
+div.cabecalho{
+    background-color: #ffffff;
+    width: 65%;
+    position: sticky;
+    border-bottom: 50px;
+    padding: 5px;
+    border-radius: 4px;
+    align-content: center;
+    margin-left: 5%;
+}
+div.sign{
+    margin-right: 50px;
+}
+
+div.menu-lateral{
+    position: relative;
+    width: 10%;
+    background-color: #fff;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #488056;
+}
+
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+a:link{
+    text-decoration: none;
+    color: black;
+}
+
+a:active{
+    text-decoration: underline;
+    background-color: #333030;
+    color: #000000;
+    transition: 0.3s;
+}
+
+a.account{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;
+}
+
+a.menu-lateral-link{
+    
 }
