@@ -3,5 +3,11 @@ body{
 }
 
 .cad_cli{
-    
+    width: 70%;
+}
+
+label{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
 }

@@ -2,10 +2,11 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Novo Usuário - Classy Scrub Renting</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Novo Usuário - Classy Scrub™ Renting</title>
   </head>
   <body>
-    <form action="scripts_php/cadastroCliente.process.php" method="POST"
+    <form action="scripts_php/cadastroCliente.process.php" method="POST">
         <label>Nome: </label><br>
         <input type="text" name="cad_nome" maxlenght="100" required placeholder="Nome completo" autofocus>
         <br><br>
