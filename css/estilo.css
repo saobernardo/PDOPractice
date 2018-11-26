@@ -10,31 +10,100 @@ body{
     width: 70%;
 }
 
-label{
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+
+label.menu-lateral-link{
+    text-align: center;
+    font-family: sans-serif;
+    padding: 8px 5px;
+    color: black;
+}
+
+div.container{
+    width: 1200;
+    height: auto;
+    margin: 0 auto;
 }
 
 div.cabecalho{
-    background-color: #ffffff;
-    width: 65%;
     position: sticky;
-    border-bottom: 50px;
+    float: left;
+    background-color: #ffffff;
+    width: 100%;
     padding: 5px;
-    border-radius: 4px;
-    align-content: center;
-    margin-left: 5%;
+    height: auto;
 }
+
+label.logo{
+    position: relative;
+    float: left;
+    color: #000;
+    margin-left: 60px;
+    font-family: trajan;
+    font-size: 70px;
+}
+
+img#logo{
+    position: relative;
+    float: left;
+    height:100px;
+    width: 125px;
+}
+
 div.sign{
-    margin-right: 50px;
+    margin-top: 0;
+    margin-left: 120px;
+    width:100px;
+    height: auto;
+    position: relative;
+    float: left;
 }
 
 div.menu-lateral{
     position: relative;
-    width: 10%;
+    float: left;
+    width: 13%;
     background-color: #fff;
     height: auto;
+    margin-left: 2%;
+    margin-top: 15px;
+    border-radius: 3px;
+
+}
+
+div.botao-menulateral{
+    font-family: arial;
+    text-align: center;
+    color: #000000;
+    padding: 3px;
+    margin:2px 5px;
+}
+
+div#ultimo-botaolateral{
+    padding-bottom: 10px;
+}
+
+div#primeiro-botaolateral{
+    padding-top: 10px;
+}
+
+div.botao-menulateral: active{
+    background-color: #333030;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+div.content{
+    height: auto;
+    width:80%;
+    background-color: #000;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: #ABCDEF;
+    position: relative;
+    float: left;
+    background-color: #fff;
+    margin-top: 15px;
+    margin-left: 2%;
 }
 
 a{
@@ -59,9 +128,6 @@ a:link{
 
 a:active{
     text-decoration: underline;
-    background-color: #333030;
-    color: #000000;
-    transition: 0.3s;
 }
 
 a.account{
@@ -71,4 +137,8 @@ a.account{
 
 a.menu-lateral-link{
     
+}
+
+hr.divisao-menulateral{
+    width:90%;
 }
