@@ -36,7 +36,7 @@
     public function SelectAll(){
 
       try{
-        $sql = "SELECT * FROM cliente";
+        $sql = "SELECT id_cliente, nome_cliente, data_nascimento, genero, celular, pais, estado, cidade FROM cliente";
 
         $stm = $this->pdo->prepare($sql);
         $stm->execute();
@@ -69,8 +69,8 @@
 
     }
 
-    public function Change($nome,$dataNascimento,$genero,$email,$celular,$senha,$lembreteSenha,$pais,$estado,$cidade,$code){
-      $sql = "UPDATE cliente SET nome_cliente=?,data_nascimento=?,genero=?,email=?,celular=?,senha=?,lembreteSenha=?,pais=?,estado=?,cidade=? WHERE id_cliente=?";
+    public function Change($nome, $dataNascimento, $genero, $email, $celular, $senha, $lembreteSenha, $pais, $estado, $cidade, $code){
+      $sql = "UPDATE cliente SET nome_cliente=?, data_nascimento=?, genero=?, email=?, celular=?, senha=?, lembreteSenha=?, pais=?, estado=?, cidade=? WHERE id_cliente=?";
       try{
         $stmt = $this->pdo->prepare($sql);
 
@@ -86,6 +86,8 @@
         $stmt->bindValue(10, $cidade);
         $stmt->bindValue(11, $code);
         $stmt->execute();
+
+          echo '<script>alert("Exclusão feita com sucesso")</script>';
       }
 
       catch(PDOException $err){
@@ -93,7 +95,7 @@
       }
     }
 
-    /*
+
     #Função de apagar do banco
     public function Delete($code){
 
@@ -103,13 +105,17 @@
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(1, $code);
         $stmt->execute();
+
+        echo '<script>alert("Exclusão feita com sucesso")</script>';
+
+        header('location:../listarCadastros.php');
       }
 
       catch(PDOException $err){
         echo "Erro na linha". $err->getLine();
       }
 
-    }*/
+    }
 
   }
  ?>

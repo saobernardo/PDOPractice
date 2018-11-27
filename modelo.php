@@ -16,14 +16,15 @@
 
     <body>
         <div class="div_container">
-            
+            <div class="div_topo">
                 <?php require_once 'menu.php'?>
-            
-            <div class="div_titulo">
-                <label>Bem-Vindo a Classy Scrub™ Renting</label>
-            </div>
+            </div>     
+        </div>
+        
+        <div class="content">
             
         </div>
+
     </body>
 
 </html>

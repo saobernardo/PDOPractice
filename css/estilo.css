@@ -1,144 +1,210 @@
-*{
-    box-sizing: border-box;
+.ti{
+  position: relative;
+  color:red;
+  font-weight: bold;
+}
+.cadastro_link{
+    margin-left: 120px;
+    font-size: 10px;
+    color: white;
+    position: relative;
+    float: left;
+    margin-top: 50px;
+}
+
+.quad{
+  margin-right: 100px;  
+  margin-left: 5%;
+}
+
+.quad2{
+ 
+
 }
 
 body{
-    background-color: black;
-}
-
-.cad_cli{
-    width: 70%;
-}
-
-
-label.menu-lateral-link{
-    text-align: center;
-    font-family: sans-serif;
-    padding: 8px 5px;
-    color: black;
-}
-
-div.container{
-    width: 1200;
-    height: auto;
-    margin: 0 auto;
-}
-
-div.cabecalho{
-    position: sticky;
-    float: left;
-    background-color: #ffffff;
-    width: 100%;
-    padding: 5px;
-    height: auto;
-}
-
-label.logo{
-    position: relative;
-    float: left;
-    color: #000;
-    margin-left: 60px;
-    font-family: trajan;
-    font-size: 70px;
-}
-
-img#logo{
-    position: relative;
-    float: left;
-    height:100px;
-    width: 125px;
-}
-
-div.sign{
-    margin-top: 0;
-    margin-left: 120px;
-    width:100px;
-    height: auto;
-    position: relative;
-    float: left;
-}
-
-div.menu-lateral{
-    position: relative;
-    float: left;
-    width: 13%;
-    background-color: #fff;
-    height: auto;
-    margin-left: 2%;
-    margin-top: 15px;
-    border-radius: 3px;
-
-}
-
-div.botao-menulateral{
-    font-family: arial;
-    text-align: center;
-    color: #000000;
-    padding: 3px;
-    margin:2px 5px;
-}
-
-div#ultimo-botaolateral{
-    padding-bottom: 10px;
-}
-
-div#primeiro-botaolateral{
-    padding-top: 10px;
-}
-
-div.botao-menulateral: active{
-    background-color: #333030;
-    text-decoration: underline;
-    transition: 0.3s;
-}
-
-div.content{
-    height: auto;
-    width:80%;
     background-color: #000;
-    border-style: solid;
-    border-radius: 2px;
-    border-color: #ABCDEF;
+    font-family: tahoma;
+    background-image: url(../images/trabalho.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.div_container{
+    margin: 0 auto;
+    width: auto;
+    height: 800px;
+    /*margin-top: -750px;*/
+}
+
+.sombra{
+    box-shadow: 0 0 3em #000;
+}
+
+
+.div_topo{
+    background-position: relative;
+    width: 100%;
+    height: auto;
+    border: 2px solid;
+    z-index:1;
+}
+
+.img-logo{
     position: relative;
     float: left;
-    background-color: #fff;
-    margin-top: 15px;
-    margin-left: 2%;
+    margin-top: 30px;
+}
+
+.img1{
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    opacity: 0.3;
+}
+
+.img-banner{
+    position: relative;
+    float: left;
+    margin-left: 100px;
+    margin-top: -15px;
+}
+
+.menu{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    font-family: verdana;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: black;
+    padding: 5px 5px 5px 20px;
+    line-height: 2em;
+    word-spacing: 10px;
+    color: red;
 }
 
 a{
     text-decoration: none;
-    color: black;
+    color: red;
+    text-shadow: 1px 1px #000;
 }
 
 a:hover{
-    text-decoration: underline;
-    color: #488056;
+    color: #0c3df2;
+    text-shadow: 1px 1px #000;
 }
 
 a:visited{
     text-decoration: none;
-    color: black;
 }
 
-a:link{
-    text-decoration: none;
-    color: black;
+.div_titulo{
+    position: relative;
+    margin-top: 4px;
+    margin-left: 22%;
+    width: 750px;
+    height: 50px;
+    background-color: black;
+    margin-bottom: 10px;
+    border-top: 5px solid #07269c;
+    opacity:.7;
+    font-family: verdana;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 5px 5px 20px;
+    line-height: 2em;
+    color: white;
 }
 
-a:active{
-    text-decoration: underline;
+/*Div pra o container de conteúdos, embora tenha o nome de form*/ 
+.div_form{
+    margin-left: 22%;
+    width: 750px;
+    height: 450px;
+    background-color: black;
+    border: 1px solid #07269c;
+    padding: 10px;
+    z-index:1;
+    opacity:.7;
+    z-index:2;
 }
 
-a.account{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 10px;
+.div_form2{
+    margin-left:60px;
+    width: 90%;
+    height: 100%;
+    background-color: black;
+    border: 1px solid #07269c;
+    padding: 10px;
+    z-index:1;
+    opacity:.7;
+    z-index:2;
 }
 
-a.menu-lateral-link{
-    
+.dados{
+
+  position: relative;
+  float: left;
+  width: 150px;
+  margin: 10px 20px;
+  text-align: center;
 }
 
-hr.divisao-menulateral{
-    width:90%;
+table{
+    text-align: center;
+    margin-right: auto;
+    position: relative;
+    float:left;
+}
+
+th, td{
+    width: 140px;
+    height: auto;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 2px;
+}
+
+.links_UD{
+    position:relative;
+    float:left;
+    width: auto;
+    margin-top:10px
+}
+
+.link_lista{
+    color: white;
+    margin-left:25px;
+}
+
+.form_login{
+  width: 210px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  border: 1px solid #000;
+
+}
+
+.cadastrar{
+margin-left: 625px;
+border-radius: 20px;
+background-color: grey;
+font-weight: bold;
+}
+
+.box2{
+  position: relative;
+  margin-top: -6%;
+  margin-right: 90%;
+  margin-left: 100%;
+  width: 80%;
+}
+
+.clear{
+  clear: both;
 }
