@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/normalize.css">
 
 
-        <title>Classy Scrub™ Renting</title>
+        <title>Classy Scrub™ Renting - Lista de Cadastros</title>
 
 
     </head>

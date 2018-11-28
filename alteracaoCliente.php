@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/estilo.css">
 
-        <title>Classy Scrub™ Renting - Cadastro de usuário</title>
+        <title>Classy Scrub™ Renting - Alteração de Cadastro</title>
 
 
     </head>
@@ -17,7 +17,7 @@
 
         <div class="div_container">
                <?php
-                    #Faendo require de arquivos necessários
+                    #Fazendo require de arquivos necessários
                     require_once 'scripts_php/Conexao.php';
                     require_once 'scripts_php/clienteCRUD.class.php';
                     require_once 'menu.php';

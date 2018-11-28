@@ -208,3 +208,10 @@ font-weight: bold;
 .clear{
   clear: both;
 }
+
+p{
+    padding: 3px;
+    color: #fff;
+    text-align: justify;
+    text-indent: 50px;
+}

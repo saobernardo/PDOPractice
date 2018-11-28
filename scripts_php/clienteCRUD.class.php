@@ -9,7 +9,16 @@
 
     public function CreateUser($nome, $dataNascimento, $genero, $email, $celular, $senha, $lembreteSenha, $pais, $estado, $cidade){
       try{
-        $sql = "INSERT INTO cliente (nome_cliente, data_nascimento, genero, email, celular, senha, lembrete_senha, pais, estado, cidade)
+        $sql = "INSERT INTO cliente (nome_cliente, 
+                                      data_nascimento,
+                                      genero,
+                                      email,
+                                      celular,
+                                      senha,
+                                      lembrete_senha,
+                                      pais,
+                                      estado,
+                                      cidade)
         VALUES (?,?,?,?,?,?,?,?,?,?);";
 
         $stm = $this->pdo->prepare($sql);

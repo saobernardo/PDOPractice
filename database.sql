@@ -69,6 +69,8 @@ alter table pgto modify cpf_titular bigint not null;
 #Criando chaves estrangeiras na tabela pgto
 alter table pgto add column id_cliente int not null;
 alter table pgto add constraint fk_idcliente_pgto foreign key(id_cliente) references cliente(id_cliente);
+#Renomeando a tabela
+alter table pgto rename to cadastro_pgto;
 
 #Criando tabela histórico
 create table historico(
@@ -176,11 +178,13 @@ id_media int not null primary key auto_increment,
 media_nota decimal(3,1) not null
 )engine=innodb;
 
+#Adicionando as chaves estrangeiras em media_nota
 alter table media_nota add column id_jogo int not null;
 alter table media_nota add constraint fk_idjogo_media foreign key (id_jogo) references jogo(id_jogo);
 alter table media_nota add column id_avaliacao int not null;
 alter table media_nota add constraint fk_idavaliacao foreign key (id_avaliacao) references avaliacao_jogo(id_avaliacao);
 
+#Criando a tabela de categoria de jogos
 create table categoria(
 id_categoria int not null primary key auto_increment,
 nome_categoria varchar(70) not null
@@ -188,6 +192,7 @@ nome_categoria varchar(70) not null
 
 select * from categoria;
 
+#Inserindo todas as categorias conhecidas como campos na tabela
 insert into categoria (nome_categoria)
 values ('4X'),('First Person Adventure'),('Beat em Up'),('bishōjo'),('Business'),('Construct and Management'),
 ('Dungeon Crawler'),('Educational'),('Eroge'),('Escape the Room'),('Sport'),('Strategy'),('Real-time Strategy'),
@@ -202,6 +207,7 @@ values ('4X'),('First Person Adventure'),('Beat em Up'),('bishōjo'),('Business'
 ('Life Simulation'),('Surival Horror'),('Real-Time Tactics'),('First Person Shooter'),('Third Person Shooter'),
 ('Tower Defense'),('Visual Romance');
 
+#Criando tabela relacional entre jogo e categoria
 create table jogo_has_categoria(
 id_jogo int not null,
 id_categoria int not null,
@@ -209,25 +215,30 @@ foreign key (id_jogo) references jogo(id_jogo),
 foreign key (id_categoria) references categoria(id_categoria)
 )engine=innodb;
 
+#Criando a tabela de tag que o jogo receberá, que define seu preço
 create table tag_jogo(
 id_tag int not null primary key auto_increment,
 nome_tag varchar(45) not null,
 preco_aluguel decimal(4,2) not null
 )engine=innodb;
 
+#Adicionando valores pdrão na tabela tag_jogo
 insert into tag_jogo (nome_tag, preco_aluguel)
 values ('Verde', 15.00),
 ('Amarelo', 8.00),
 ('Vermelho', 5.00),
 ('Preto', 4.00);
 
+#Criando a tabela de faixa etária ue cada jogo receberá
 create table faixa_etaria(
 id_faixaetaria int not null primary key auto_increment,
 faixa_etaria tinyint not null
 )engine = innodb;
 
+#Adicionando coluna esquecida
 alter table faixa_etaria add column nome_faixaetaria varchar(30) not null;
 
+#Adicionando valores adrão de consulta na tabela faixa_etaria
 insert into faixa_etaria(faixa_etaria, nome_faixaetaria)
 values (3, 'Early Childhood (EC)'),
 (6, 'Everyone (E)'),
@@ -238,6 +249,7 @@ values (3, 'Early Childhood (EC)'),
 
 select * from faixa_etaria;
 
+#Criando tabela relacional entre jogo e faixa etária
 create table jogo_has_faixaetaria(
 id_jogo int not null,
 id_faixaetaria int not null,
