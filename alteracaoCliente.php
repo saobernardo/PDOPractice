@@ -14,33 +14,33 @@
     </head>
 
     <body>
-        
+
         <div class="div_container">
                <?php
                     #Faendo require de arquivos necessários
                     require_once 'scripts_php/Conexao.php';
                     require_once 'scripts_php/clienteCRUD.class.php';
                     require_once 'menu.php';
-                    
+
                     #Criando uma variável que receberá o valor transportado por _GET
-                    $code = $_GET['code'];
+                    $cod = $_GET['code'];
                     #Criando objeto de CRUD
                     $crud = new ClienteCRUD(Conexao::getInstance());
                     #Chamando o método de crud e armazenando seu retorno em uma variável
-                    $cliente = $crud->SpecificSelection($code);
-            
-                    
+                    $cliente = $crud->SpecificSelection($cod);
+
+
                 ?>
 
-            
+
                 <div class="div_titulo">Alteração de cadastro</div>
-                
+
                 <div class="div_form"> <!--carrega o formulario-->
                     <?php foreach ($cliente as $dados){ ?>
                     <form action="scripts_php/alteracaoCliente.process.php" method="POST">
-                        
+
                     <input type="hidden" name="cad_code" value="<?php echo $dados->id_cliente ?>">
-                        
+
                     <label class = "ti"> Nome: </label>
                     <input class = "quad" type="text" name="cad_nome" required autofocus maxlenght="100" value="<?php echo $dados->nome_cliente ?>">
 

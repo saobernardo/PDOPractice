@@ -70,7 +70,7 @@
     }
 
     public function Change($nome, $dataNascimento, $genero, $email, $celular, $senha, $lembreteSenha, $pais, $estado, $cidade, $code){
-      $sql = "UPDATE cliente SET nome_cliente=?, data_nascimento=?, genero=?, email=?, celular=?, senha=?, lembreteSenha=?, pais=?, estado=?, cidade=? WHERE id_cliente=?";
+      $sql = "UPDATE cliente SET nome_cliente=?, data_nascimento=?, genero=?, email=?, celular=?, senha=?, lembrete_senha=?, pais=?, estado=?, cidade=? WHERE id_cliente=?";
       try{
         $stmt = $this->pdo->prepare($sql);
 

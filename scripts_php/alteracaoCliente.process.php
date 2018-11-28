@@ -17,7 +17,7 @@ $client->setLembreteSenha($_POST['cad_lembretesenha']);
 $client->setPais($_POST['cad_pais']);
 $client->setEstado($_POST['cad_estado']);
 $client->setCidade($_POST['cad_cidade']);
-$code = $_POST['cad_code'];
+$codigo = $_POST['cad_code'];
 
-$crud->Change($client->getNome(),$client->getDataNascimento(),$client->getGenero(),$client->getEmail(),$client->getCelular(),$client->getSenha(), $client->getLembreteSenha(),$client->getPais(),$client->getEstado(),$client->getCidade(), $code)
+$crud->Change($client->getNome(),$client->getDataNascimento(),$client->getGenero(),$client->getEmail(),$client->getCelular(),$client->getSenha(), $client->getLembreteSenha(),$client->getPais(),$client->getEstado(),$client->getCidade(), $codigo)
  ?>
