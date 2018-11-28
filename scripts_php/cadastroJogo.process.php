@@ -1,11 +1,13 @@
 <?php
+
+  #Requisiçõ de arquivos necessários
   require_once 'Conexao.php';
   require_once 'jogo.class.php';
   require_once 'jogoCrud.class.php';
 
   #Instanciando a conexão do ClienteCrud
   $crudJogo = new jogoCRUD(Conexao::getInstance());
-  #Instanciando o objeto da classe jogo para poder usar seus métodos
+  #Instanciando o objeto da classe jogo para poder usar seus métodos de encapsulamento
   $novoJogo = new Jogo();
 
   #Definindo os valores os atributos da classe jogo

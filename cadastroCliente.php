@@ -25,7 +25,8 @@
 
                 <div class="div_titulo">CADASTRO DE CLIENTES</div>
 
-                  <div class="div_form"> <!--carrega o formulario-->
+                  <div class="div_form">
+                    <!-- Tag formulário, que enviará os dados via post para o arquivo em action -->
                     <form action="scripts_php/cadastroCliente.process.php" method="POST">
 
                       <label class = "ti"> Nome: </label>

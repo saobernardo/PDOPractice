@@ -16,13 +16,13 @@
 
     <body>
         <div class="div_container">
-            
+                <!-- Pedaço de código que se repetirá em todas as páginas, por enquanto -->
                 <?php require_once 'menu.php'?>
-            
+
             <div class="div_titulo">
                 <label>Bem-Vindo a Classy Scrub™ Renting</label>
             </div>
-            
+
             <div class="div_form">
                 <p>Olá, jogador. Seja bem-vindo à Classy Scrub™ Renting. Esse será um portal de aluguel de jogos em versão digital através de uma plataforma que será desenvolvida para ser instalada em seu computador, em conjunto com o nosso website. Terá um catálogo onde clientes poderão alugar um jogo para ter ativo em sua conta para jogar por 72 horas, incluindo servidores online disponíveis em jogos multiplayer. Assim que esse tempo passar, o jogo será removido da sua conta, junto com o arquivo de salvamento do mesmo.
                 </p>
@@ -31,7 +31,7 @@
                 <p>Nossa plataforma e portal web ainda está em desenvolvimento e entrarácom negociações entre as grandes desenvolvedoras em breve. Nossa intenção não é e nem nunca será disputar com plataformas de vendas de jogos, como a Steam ou GOG.com, e sim ser mais uma forma de jogadores poderem adquirir jogos por preços acessíveis e poder testá-los antes de adquirí-los.</p>
                 <p>Esperamos que tenha um boa experiência com o nosso portal.</p>
             </div>
-            
+
         </div>
     </body>
 

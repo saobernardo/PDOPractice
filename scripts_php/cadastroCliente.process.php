@@ -21,7 +21,7 @@
   $novoCliente->setEstado($_POST['cad_estado']);
   $novoCliente->setCidade($_POST['cad_cidade']);
 
-  #invocando o método de registro no banco de dados
+  #Chamando o método para registrar no banco de dados, passando os gets dos sets acima como parâmetros
   $crudCliente->CreateUser($novoCliente->getNome(),$novoCliente->getDataNascimento(),$novoCliente->getGenero(),
                               $novoCliente->getEmail(),$novoCliente->getCelular(),$novoCliente->getSenha(),
                               $novoCliente->getLembreteSenha(), $novoCliente->getPais(), $novoCliente->getEstado(),

@@ -36,9 +36,10 @@
                 <div class="div_titulo">Alteração de cadastro</div>
 
                 <div class="div_form"> <!--carrega o formulario-->
-                    <?php foreach ($cliente as $dados){ ?>
+                    <?php foreach ($cliente as $dados){ ?> <!-- Para cada valor dentro do array cliente -->
                     <form action="scripts_php/alteracaoCliente.process.php" method="POST">
 
+                    <!-- Esse é um exemplo de um campo com o valor de algo vindo do banco de dados -->
                     <input type="hidden" name="cad_code" value="<?php echo $dados->id_cliente ?>">
 
                     <label class = "ti"> Nome: </label>
@@ -95,6 +96,7 @@
                     <input class = "cadastrar" type="submit" value="CADASTRAR">
 
               </form>
+              <!-- Fim do loop -->
             <?php }?>
             </div>
         </div>
