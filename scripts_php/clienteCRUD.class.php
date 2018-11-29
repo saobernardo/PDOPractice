@@ -39,6 +39,7 @@
         $stm->execute();
 
         #Direcionar para uma segunda página asism que tudo acima for executado
+        echo '<script>alert("Usuário cadastrado com sucesso. Clique para continuar")</script>';
         header('location:../CadastroRealizado.php');
       }
 
@@ -104,7 +105,7 @@
         $stmt->bindValue(11, $code);
         $stmt->execute();
 
-          echo '<script>alert("Exclusão feita com sucesso")</script>';
+          echo '<script>alert("Alteração feita com sucesso")</script>';
       }
 
       catch(PDOException $err){

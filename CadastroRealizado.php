@@ -18,15 +18,13 @@
         <div class="div_container">
             <div class="div_topo">
                 <?php require_once 'menu.php'?>
-            </div>     
-            
+            </div>
+
                 <div class="div_titulo">
                     Usuário cadastrado com sucesso!
                 </div>
             </div>
-        <?php 
-            $dormir = 5; 
-            sleep($dormir);
+        <?php
             header('location: listarCadastros.php');
         ?>
 

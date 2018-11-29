@@ -23,5 +23,8 @@ $client->setCidade($_POST['cad_cidade']);
 $codigo = $_POST['cad_code'];
 
 #Chamando o método de alteração
-$crud->Change($client->getNome(),$client->getDataNascimento(),$client->getGenero(),$client->getEmail(),$client->getCelular(),$client->getSenha(), $client->getLembreteSenha(),$client->getPais(),$client->getEstado(),$client->getCidade(), $codigo)
+$crud->Change($client->getNome(),$client->getDataNascimento(),$client->getGenero(),$client->getEmail(),$client->getCelular(),$client->getSenha(), $client->getLembreteSenha(),$client->getPais(),$client->getEstado(),$client->getCidade(), $codigo);
+
+header('location:../listarCadastros.php');
  ?>
+

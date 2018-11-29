@@ -62,7 +62,7 @@
                     </tr>
                 </table>
                 <!-- Abaixo estão os botões de alterar e excluir, que vão enviar valor de id_cliente do banco de dados via _GET para o
-              rquivo php especificado. -->
+            arquivo php especificado. -->
                 <div class="links_UD">
                     <a href="alteracaoCliente.php?code=<?php echo $registro->id_cliente ?>" class="link_lista">ALTERAR</a>
                     |
