@@ -37,7 +37,7 @@
                 <?php
                   #Criando uma variável que receberá todos os valores que o método requisitado retornar
                     $dados = $cliente->selectAll();
-                  #ara cada dado, ele fará o que foi programado abaixo
+                  #Para cada dado, ele fará o que foi programado abaixo
                     foreach ($dados as $registro){
                 ?>
                 <table class="lista-dados" border="2">

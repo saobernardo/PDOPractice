@@ -38,7 +38,7 @@
         $stm->bindValue(10, $cidade);
         $stm->execute();
 
-        #Direcionar para uma segunda página asism que tudo acima for executado
+        #Direcionar para uma segunda página assim que tudo acima for executado
         echo '<script>alert("Usuário cadastrado com sucesso. Clique para continuar")</script>';
         header('location:../CadastroRealizado.php');
       }
